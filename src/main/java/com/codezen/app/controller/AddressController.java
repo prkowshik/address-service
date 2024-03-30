@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.codezen.app.model.AddressRequest;
+import com.codezen.app.model.Address;
 import com.codezen.app.service.AddressService;
 
 @RestController
@@ -19,7 +19,7 @@ public class AddressController {
 	private AddressService addressService;
 	
 	@GetMapping("/getById/{id}")
-	public ResponseEntity<AddressRequest> getAddressById(@PathVariable Integer id){
+	public ResponseEntity<Address> getAddressById(@PathVariable Integer id){
 		return new ResponseEntity(addressService.getAddressById(id), HttpStatus.OK);
 		
 	}
